@@ -7,7 +7,6 @@
 <title>Slighttech Laptop and Computer Solutions</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -15,18 +14,21 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #111111;
+    background: #f8f8f8;
+    color: #111;
 }
 
 header {
-    background: #111111;
+    background: #111;
     color: white;
-    padding: 20px;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -34,115 +36,223 @@ header {
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+}
+
+.cart-button {
+    background: white;
+    color: #111;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-count {
+    background: #e53935;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+    margin-left: 4px;
 }
 
 .hero {
-    background: #f5f5f5;
+    background: #111;
+    color: white;
     text-align: center;
-    padding: 70px 20px;
+    padding: 80px 20px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin: 0 0 15px;
+    font-size: 44px;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    color: #666;
+    color: #ccc;
     font-size: 18px;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 25px;
+    padding: 30px 20px;
 }
 
-h2 {
-    font-size: 30px;
-    margin-top: 35px;
+.shop-tools {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.shop-tools input,
+.shop-tools select {
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.shop-tools input {
+    flex: 1;
+    min-width: 220px;
 }
 
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
 }
 
 .product {
+    background: white;
     border: 1px solid #ddd;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform .2s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
 }
 
 .product img {
     width: 100%;
-    height: 220px;
+    height: 190px;
     object-fit: cover;
 }
 
 .product-content {
-    padding: 20px;
+    padding: 17px;
 }
 
 .badge {
-    background: #eeeeee;
-    padding: 5px 10px;
+    display: inline-block;
+    background: #eee;
+    padding: 5px 9px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.brand {
+    color: #777;
+    font-size: 13px;
+    margin-top: 10px;
 }
 
 .product h3 {
-    margin-bottom: 10px;
+    margin: 8px 0;
+    font-size: 18px;
 }
 
-.product p {
+.specs {
     color: #666;
     line-height: 1.6;
+    font-size: 14px;
 }
 
 .price {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     margin: 15px 0;
 }
 
-button {
+.add-cart {
+    width: 100%;
     background: #111;
     color: white;
     border: none;
-    padding: 14px 20px;
+    padding: 13px;
     border-radius: 7px;
     cursor: pointer;
     font-weight: bold;
 }
 
-button:hover {
+.add-cart:hover {
     background: #333;
 }
 
+/* CART */
+
+.cart-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 70px 1fr auto auto auto;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-item img {
+    width: 70px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove {
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* CHECKOUT */
+
 .checkout {
-    background: #f7f7f7;
+    background: white;
     margin-top: 50px;
     padding: 30px;
     border-radius: 12px;
-}
-
-.selected {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 25px;
 }
 
 .row {
@@ -173,7 +283,7 @@ textarea {
 }
 
 .payment {
-    background: white;
+    background: #fafafa;
     border: 1px solid #ddd;
     padding: 20px;
     margin-top: 25px;
@@ -181,18 +291,28 @@ textarea {
 }
 
 .payment-details {
-    background: #f1f1f1;
+    background: #eee;
     padding: 18px;
     margin-top: 15px;
     border-radius: 7px;
     line-height: 1.8;
-    word-break: break-word;
 }
 
 .warning {
     color: #666;
     font-size: 13px;
     line-height: 1.6;
+}
+
+.submit-order {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .success {
@@ -212,10 +332,18 @@ footer {
     margin-top: 60px;
 }
 
+/* MOBILE */
+
+@media(max-width:1000px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media(max-width:750px) {
 
     .products {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .row {
@@ -227,22 +355,33 @@ footer {
         gap: 15px;
     }
 
-    nav a {
-        margin: 0 8px;
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero h1 {
         font-size: 32px;
     }
 
+    .cart-item {
+        grid-template-columns: 55px 1fr;
+    }
+
+    .cart-item > * {
+        margin-bottom: 5px;
+    }
 }
 
+@media(max-width:480px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
-
 </head>
 
 <body>
-
 
 <header>
 
@@ -254,8 +393,15 @@ SLIGHTTECH
 
 <nav>
 <a href="#shop">Shop</a>
-<a href="#order">Order</a>
+<a href="#cart">Cart</a>
+<a href="#checkout">Checkout</a>
 <a href="#contact">Contact</a>
+
+<button class="cart-button" onclick="goToCart()">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</button>
+
 </nav>
 
 </div>
@@ -265,393 +411,161 @@ SLIGHTTECH
 
 <section class="hero">
 
-<h1>
-Slighttech Laptop and Computer Solutions
-</h1>
+<h1>Slighttech Laptop and Computer Solutions</h1>
 
-<p>
-New & Refurbished Laptops
-</p>
+<p>New & Refurbished Laptops</p>
 
-<p>
-Quality computers at competitive prices.
-</p>
+<p>Quality computers at competitive prices.</p>
 
 </section>
 
 
+<!-- SHOP -->
 
 <div class="container" id="shop">
 
-<h2>
-Available Laptops
-</h2>
+<h2>Available Laptops</h2>
 
+<div class="shop-tools">
 
-<div class="products">
+<input
+type="text"
+id="search"
+placeholder="Search laptops..."
+oninput="filterProducts()">
 
+<select id="brandFilter" onchange="filterProducts()">
 
-<!-- PRODUCT 1 -->
+<option value="all">All Brands</option>
+<option value="Dell">Dell</option>
+<option value="HP">HP</option>
+<option value="Lenovo">Lenovo</option>
+<option value="MacBook">MacBook</option>
 
-<div class="product">
-
-<img
-src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
-alt="HP EliteBook">
-
-<div class="product-content">
-
-<span class="badge">
-REFURBISHED
-</span>
-
-<h3>
-HP EliteBook 840
-</h3>
-
-<p>
-Intel Core i5<br>
-8GB RAM<br>
-256GB SSD
-</p>
-
-<div class="price">
-$299
-</div>
-
-<button onclick="buyLaptop(
-'HP EliteBook 840',
-'Refurbished',
-'$299'
-)">
-Buy Now
-</button>
-
-</div>
+</select>
 
 </div>
 
 
+<div class="products" id="products"></div>
 
-<!-- PRODUCT 2 -->
-
-<div class="product">
-
-<img
-src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
-alt="Dell Latitude">
-
-<div class="product-content">
-
-<span class="badge">
-REFURBISHED
-</span>
-
-<h3>
-Dell Latitude 5420
-</h3>
-
-<p>
-Intel Core i5<br>
-16GB RAM<br>
-512GB SSD
-</p>
-
-<div class="price">
-$349
 </div>
 
-<button onclick="buyLaptop(
-'Dell Latitude 5420',
-'Refurbished',
-'$349'
-)">
-Buy Now
-</button>
+
+<!-- CART -->
+
+<div class="container" id="cart">
+
+<div class="cart-section">
+
+<h2>🛒 Your Shopping Cart</h2>
+
+<div id="cartItems"></div>
+
+<div class="cart-total">
+Total: $<span id="cartTotal">0</span>
+</div>
 
 </div>
 
 </div>
 
 
+<!-- CHECKOUT -->
 
-<!-- PRODUCT 3 -->
-
-<div class="product">
-
-<img
-src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
-alt="Lenovo ThinkPad">
-
-<div class="product-content">
-
-<span class="badge">
-NEW
-</span>
-
-<h3>
-Lenovo ThinkPad E14
-</h3>
-
-<p>
-Intel Core i7<br>
-16GB RAM<br>
-512GB SSD
-</p>
-
-<div class="price">
-$599
-</div>
-
-<button onclick="buyLaptop(
-'Lenovo ThinkPad E14',
-'New',
-'$599'
-)">
-Buy Now
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- PRODUCT 4 -->
-
-<div class="product">
-
-<img
-src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
-alt="HP Laptop">
-
-<div class="product-content">
-
-<span class="badge">
-NEW
-</span>
-
-<h3>
-HP 250 G9
-</h3>
-
-<p>
-Intel Core i5<br>
-8GB RAM<br>
-512GB SSD
-</p>
-
-<div class="price">
-$499
-</div>
-
-<button onclick="buyLaptop(
-'HP 250 G9',
-'New',
-'$499'
-)">
-Buy Now
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<!-- ORDER -->
-
-<div class="container" id="order">
+<div class="container" id="checkout">
 
 <div class="checkout">
 
-<h2>
-Place Your Order
-</h2>
+<h2>Place Your Order</h2>
 
+<h3>Selected Products</h3>
 
-<div class="selected">
-
-<strong>
-Selected Laptop:
-</strong>
-
-<p id="selectedLaptop">
-Please select a laptop above.
-</p>
-
+<div id="checkoutItems">
+Your cart is empty.
 </div>
-
 
 
 <form id="orderForm">
 
+<h3>Your Details</h3>
 
-<h3>
-Your Details
-</h3>
+<div class="row">
+
+<div>
+<label>Full Name</label>
+<input type="text" required placeholder="Full name">
+</div>
+
+<div>
+<label>Email</label>
+<input type="email" required placeholder="you@example.com">
+</div>
+
+</div>
 
 
 <div class="row">
 
 <div>
-
-<label>
-Full Name
-</label>
-
-<input
-type="text"
-required
-placeholder="Full name">
-
+<label>Phone Number</label>
+<input type="tel" required placeholder="+1...">
 </div>
-
 
 <div>
-
-<label>
-Email
-</label>
-
-<input
-type="email"
-required
-placeholder="you@example.com">
-
+<label>Country</label>
+<input type="text" required placeholder="United States">
 </div>
 
 </div>
-
 
 
 <div class="row">
 
 <div>
-
-<label>
-Phone Number
-</label>
-
-<input
-type="tel"
-required
-placeholder="+1...">
-
+<label>City</label>
+<input type="text" required>
 </div>
-
 
 <div>
-
-<label>
-Country
-</label>
-
-<input
-type="text"
-required
-placeholder="United States">
-
+<label>State / County</label>
+<input type="text" required>
 </div>
 
 </div>
-
 
 
 <div class="row">
 
 <div>
-
-<label>
-City
-</label>
-
-<input
-type="text"
-required>
-
+<label>ZIP / Postal Code</label>
+<input type="text" required>
 </div>
-
 
 <div>
-
-<label>
-State / County
-</label>
-
-<input
-type="text"
-required>
-
+<label>Street / Physical Address</label>
+<input type="text" required>
 </div>
 
 </div>
 
 
-
-<div class="row">
-
-<div>
-
-<label>
-ZIP / Postal Code
-</label>
-
-<input
-type="text"
-required>
-
-</div>
-
-
-<div>
-
-<label>
-Street / Physical Address
-</label>
-
-<input
-type="text"
-required
-placeholder="House number and street">
-
-</div>
-
-</div>
-
-
-
-<label>
-Additional Delivery Information
-</label>
+<label>Additional Delivery Information</label>
 
 <textarea
 placeholder="Apartment, building, delivery instructions, etc.">
 </textarea>
 
 
-
 <!-- PAYMENT -->
 
 <div class="payment">
 
-<h3>
-Payment
-</h3>
+<h3>Payment</h3>
 
+<label>Payment Method</label>
 
-<label>
-Payment Method
-</label>
-
-<select
-id="paymentMethod"
-onchange="paymentChanged()">
+<select id="paymentMethod" onchange="paymentChanged()">
 
 <option value="bank">
 Bank Transfer
@@ -664,79 +578,56 @@ Crypto
 </select>
 
 
+<div id="bank" class="payment-details">
 
-<!-- BANK -->
-
-<div
-id="bank"
-class="payment-details">
-
-<strong>
-EQUITY BANK
-</strong>
+<strong>EQUITY BANK</strong>
 
 <br><br>
 
 Account Name:
 <br>
 
-<strong>
-COLLINCE WAWERU KARIUKI
-</strong>
+<strong>COLLINCE WAWERU KARIUKI</strong>
 
 <br><br>
 
 Account Number:
 <br>
 
-<strong>
-0420183035525
-</strong>
+<strong>0420183035525</strong>
 
 <br><br>
 
 SWIFT / BIC:
 <br>
 
-<strong>
-EQBLKENAXXX
-</strong>
+<strong>EQBLKENAXXX</strong>
 
 </div>
 
-
-
-<!-- CRYPTO -->
 
 <div
 id="crypto"
 class="payment-details"
 style="display:none;">
 
-<strong>
-Crypto Payment
-</strong>
+<strong>Crypto Payment</strong>
 
 <br><br>
 
 Network:
 <br>
 
-<strong>
-YOUR CRYPTO NETWORK
-</strong>
+<strong>YOUR CRYPTO NETWORK</strong>
 
 <br><br>
 
 Wallet Address:
 <br>
 
-<strong>
-YOUR CRYPTO WALLET ADDRESS
-</strong>
+<strong>YOUR CRYPTO WALLET ADDRESS</strong>
 
 </div>
-
 
 
 <p class="warning">
@@ -744,21 +635,15 @@ YOUR CRYPTO WALLET ADDRESS
 After making your payment, enter your payment
 reference or transaction ID below.
 
-Then upload your payment receipt.
-
 Your order should remain pending until the
 payment is verified.
 
 </p>
 
-
 </div>
 
 
-
-<label>
-Payment Reference / Transaction ID
-</label>
+<label>Payment Reference / Transaction ID</label>
 
 <input
 type="text"
@@ -766,10 +651,7 @@ required
 placeholder="Enter payment reference">
 
 
-
-<label>
-Payment Screenshot / Receipt
-</label>
+<label>Payment Screenshot / Receipt</label>
 
 <input
 type="file"
@@ -777,39 +659,28 @@ accept="image/*,.pdf"
 required>
 
 
+<button
+type="submit"
+class="submit-order">
 
-<br><br>
-
-
-<button type="submit">
 SUBMIT ORDER
-</button>
 
+</button>
 
 </form>
 
 
+<div class="success" id="success">
 
-<div
-class="success"
-id="success">
+<h3>Order Submitted ✓</h3>
 
-<h3>
-Order Submitted ✓
-</h3>
+<p>Your order number is:</p>
 
-<p>
-Your order number is:
-</p>
-
-<strong id="orderNumber">
-</strong>
+<strong id="orderNumber"></strong>
 
 <p>
 Payment status:
-<strong>
-Pending Verification
-</strong>
+<strong>Pending Verification</strong>
 </p>
 
 <p>
@@ -820,20 +691,16 @@ the laptop is dispatched.
 
 </div>
 
-
 </div>
 
 </div>
-
 
 
 <!-- CONTACT -->
 
 <div class="container" id="contact">
 
-<h2>
-Contact Us
-</h2>
+<h2>Contact Us</h2>
 
 <p>
 <strong>
@@ -842,7 +709,10 @@ Slighttech Laptop and Computer Solutions
 </p>
 
 <p>
-Email: YOUR EMAIL HERE
+Email:
+<a href="mailto:marybroom662@gmail.com">
+marybroom662@gmail.com
+</a>
 </p>
 
 <p>
@@ -850,7 +720,6 @@ WhatsApp: YOUR WHATSAPP NUMBER
 </p>
 
 </div>
-
 
 
 <footer>
@@ -866,32 +735,535 @@ New & Refurbished Computers
 </footer>
 
 
-
 <script>
 
+/* LAPTOP DATABASE */
 
-let selectedLaptop = "";
+const laptops = [
+
+/* DELL */
+
+{
+brand:"Dell",
+name:"Dell Latitude E5470",
+price:150,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Dell",
+name:"Dell Latitude E7470",
+price:175,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Dell",
+name:"Dell Latitude 5480",
+price:200,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Dell",
+name:"Dell Latitude 5490",
+price:250,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Dell",
+name:"Dell Latitude 5400",
+price:300,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Dell",
+name:"Dell Latitude 5420",
+price:349,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Dell",
+name:"Dell Latitude 5520",
+price:450,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+},
+
+/* HP */
+
+{
+brand:"HP",
+name:"HP EliteBook 840 G3",
+price:160,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP EliteBook 840 G4",
+price:190,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP ProBook 450 G4",
+price:225,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP EliteBook 840 G5",
+price:275,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP ProBook 450 G7",
+price:350,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP EliteBook 840 G7",
+price:425,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP Pavilion 15",
+price:550,
+condition:"New",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+},
+
+/* LENOVO */
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad T450",
+price:180,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad X250",
+price:165,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad T460",
+price:220,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad T470",
+price:260,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad T480",
+price:320,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad T490",
+price:390,
+condition:"Refurbished",
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad E14",
+price:599,
+condition:"New",
+specs:"Core i7 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+/* MACBOOK */
+
+{
+brand:"MacBook",
+name:"MacBook Air 2017",
+price:300,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 128GB SSD",
+image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Air 2019",
+price:450,
+condition:"Refurbished",
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Air M1",
+price:699,
+condition:"Refurbished",
+specs:"Apple M1 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Pro 13 M1",
+price:799,
+condition:"Refurbished",
+specs:"Apple M1 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Air M2",
+price:999,
+condition:"New",
+specs:"Apple M2 • 8GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+}
+
+];
 
 
-/* SELECT LAPTOP */
+let cart = [];
 
-function buyLaptop(name, condition, price) {
 
-selectedLaptop =
-name +
-" — " +
-condition +
-" — " +
-price;
+/* DISPLAY PRODUCTS */
 
-document.getElementById(
-"selectedLaptop"
-).innerHTML = selectedLaptop;
+function displayProducts(list = laptops) {
 
-document.getElementById(
-"order"
-).scrollIntoView({
-behavior: "smooth"
+const container =
+document.getElementById("products");
+
+container.innerHTML = "";
+
+list.forEach((laptop, index) => {
+
+container.innerHTML += `
+
+<div class="product">
+
+<img src="${laptop.image}" alt="${laptop.name}">
+
+<div class="product-content">
+
+<span class="badge">
+${laptop.condition}
+</span>
+
+<div class="brand">
+${laptop.brand}
+</div>
+
+<h3>
+${laptop.name}
+</h3>
+
+<div class="specs">
+${laptop.specs}
+</div>
+
+<div class="price">
+$${laptop.price}
+</div>
+
+<button
+class="add-cart"
+onclick="addToCart(${index})">
+
+🛒 Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* ADD TO CART */
+
+function addToCart(index) {
+
+const laptop = laptops[index];
+
+const existing =
+cart.find(item => item.name === laptop.name);
+
+if(existing) {
+
+existing.quantity++;
+
+} else {
+
+cart.push({
+...laptop,
+quantity:1
+});
+
+}
+
+updateCart();
+
+alert(laptop.name + " added to your cart.");
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart() {
+
+const cartItems =
+document.getElementById("cartItems");
+
+const checkoutItems =
+document.getElementById("checkoutItems");
+
+let total = 0;
+let count = 0;
+
+cartItems.innerHTML = "";
+checkoutItems.innerHTML = "";
+
+if(cart.length === 0) {
+
+cartItems.innerHTML =
+"<p>Your shopping cart is empty.</p>";
+
+checkoutItems.innerHTML =
+"<p>Your cart is empty.</p>";
+
+}
+else {
+
+cart.forEach((item, index) => {
+
+const subtotal =
+item.price * item.quantity;
+
+total += subtotal;
+
+count += item.quantity;
+
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<img src="${item.image}">
+
+<div>
+<strong>${item.name}</strong>
+<br>
+${item.brand}
+<br>
+$${item.price} each
+</div>
+
+<div class="quantity">
+
+<button onclick="changeQuantity(${index}, -1)">
+−
+</button>
+
+<strong>${item.quantity}</strong>
+
+<button onclick="changeQuantity(${index}, 1)">
++
+</button>
+
+</div>
+
+<strong>
+$${subtotal}
+</strong>
+
+<button
+class="remove"
+onclick="removeFromCart(${index})">
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+
+checkoutItems.innerHTML += `
+
+<p>
+<strong>${item.name}</strong>
+× ${item.quantity}
+— $${subtotal}
+</p>
+
+`;
+
+});
+
+checkoutItems.innerHTML += `
+
+<hr>
+
+<h3>
+Order Total: $${total}
+</h3>
+
+`;
+
+}
+
+
+document.getElementById("cartCount").textContent =
+count;
+
+document.getElementById("cartTotal").textContent =
+total;
+
+}
+
+
+/* CHANGE QUANTITY */
+
+function changeQuantity(index, amount) {
+
+cart[index].quantity += amount;
+
+if(cart[index].quantity <= 0) {
+
+cart.splice(index, 1);
+
+}
+
+updateCart();
+
+}
+
+
+/* REMOVE */
+
+function removeFromCart(index) {
+
+cart.splice(index, 1);
+
+updateCart();
+
+}
+
+
+/* SEARCH AND FILTER */
+
+function filterProducts() {
+
+const search =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+const brand =
+document.getElementById("brandFilter")
+.value;
+
+const filtered =
+laptops.filter(laptop => {
+
+const matchesSearch =
+laptop.name
+.toLowerCase()
+.includes(search) ||
+laptop.brand
+.toLowerCase()
+.includes(search);
+
+const matchesBrand =
+brand === "all" ||
+laptop.brand === brand;
+
+return matchesSearch && matchesBrand;
+
+});
+
+displayProducts(filtered);
+
+}
+
+
+/* GO TO CART */
+
+function goToCart() {
+
+document.getElementById("cart")
+.scrollIntoView({
+behavior:"smooth"
 });
 
 }
@@ -901,32 +1273,25 @@ behavior: "smooth"
 
 function paymentChanged() {
 
-let method =
-document.getElementById(
-"paymentMethod"
-).value;
+const method =
+document.getElementById("paymentMethod").value;
 
 if(method === "bank") {
 
-document.getElementById(
-"bank"
-).style.display = "block";
+document.getElementById("bank")
+.style.display = "block";
 
-document.getElementById(
-"crypto"
-).style.display = "none";
+document.getElementById("crypto")
+.style.display = "none";
 
 }
-
 else {
 
-document.getElementById(
-"bank"
-).style.display = "none";
+document.getElementById("bank")
+.style.display = "none";
 
-document.getElementById(
-"crypto"
-).style.display = "block";
+document.getElementById("crypto")
+.style.display = "block";
 
 }
 
@@ -935,57 +1300,39 @@ document.getElementById(
 
 /* ORDER */
 
-document.getElementById(
-"orderForm"
-).addEventListener(
-"submit",
-function(event) {
+document.getElementById("orderForm")
+.addEventListener("submit", function(event) {
 
 event.preventDefault();
 
+if(cart.length === 0) {
 
-if(selectedLaptop === "") {
-
-alert(
-"Please select a laptop first."
-);
+alert("Please add at least one laptop to your cart.");
 
 return;
 
 }
 
-
-let orderNumber =
+const orderNumber =
 "ST-" +
 Math.floor(
 10000000 +
 Math.random() * 90000000
 );
 
+document.getElementById("orderNumber")
+.textContent = orderNumber;
 
-document.getElementById(
-"orderNumber"
-).textContent =
-orderNumber;
-
-
-document.getElementById(
-"success"
-).style.display =
-"block";
-
+document.getElementById("success")
+.style.display = "block";
 
 alert(
 "Order submitted. Order number: " +
 orderNumber
 );
 
-}
-
-);
-
-</script>
+});
 
 
-</body>
-  </html>
+/* START */
+    
