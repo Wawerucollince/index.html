@@ -4,20 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Slighttech Laptop and Computer Solutions</title>
+<title>Slighttech Laptop & Computer Solutions</title>
 
 <style>
 * {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     background: #f5f6f8;
     color: #111;
 }
@@ -25,157 +21,117 @@ body {
 header {
     background: #111;
     color: white;
-    padding: 16px 20px;
+    padding: 18px 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,.2);
 }
 
 .header {
-    max-width: 1250px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    letter-spacing: .5px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 18px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    margin-left: 18px;
 }
 
 .cart-button {
     background: white;
     color: #111;
-    border: 0;
+    border: none;
+    padding: 10px 16px;
     border-radius: 8px;
-    padding: 10px 15px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.cart-count {
-    background: #e53935;
-    color: white;
-    padding: 3px 7px;
-    border-radius: 50%;
-    margin-left: 4px;
-    font-size: 12px;
-}
-
 .hero {
-    background: linear-gradient(135deg,#111,#292929);
+    background: #111;
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 70px 20px;
 }
 
 .hero h1 {
-    font-size: 44px;
-    margin: 0 0 15px;
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    color: #ddd;
+    color: #ccc;
     font-size: 18px;
 }
 
-.hero-button {
-    display: inline-block;
-    margin-top: 20px;
-    background: white;
-    color: #111;
-    padding: 14px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
 .container {
-    max-width: 1250px;
+    max-width: 1200px;
     margin: auto;
     padding: 30px 20px;
 }
 
-.section-title {
-    font-size: 30px;
-    margin-bottom: 25px;
-}
-
-/* CATEGORY BUTTONS */
-
-.categories {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.category {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-}
-
-.category:hover,
-.category.active {
-    background: #111;
-    color: white;
-}
-
 /* SEARCH */
 
-.shop-tools {
-    display: flex;
-    gap: 12px;
+.search-area {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
     margin-bottom: 30px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.06);
 }
 
-.shop-tools input,
-.shop-tools select {
-    padding: 14px;
+#search {
+    width: 100%;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background: white;
-    font-size: 15px;
+    font-size: 16px;
 }
 
-.shop-tools input {
-    flex: 1;
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.categories button {
+    padding: 10px 18px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.categories button.active,
+.categories button:hover {
+    background: #111;
+    color: white;
 }
 
 /* PRODUCTS */
 
 .products {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 22px;
 }
 
 .product {
     background: white;
-    border: 1px solid #ddd;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
     transition: .2s;
 }
 
@@ -185,27 +141,19 @@ nav a {
 
 .product img {
     width: 100%;
-    height: 200px;
+    height: 190px;
     object-fit: cover;
+    display: block;
 }
 
 .product-content {
     padding: 18px;
 }
 
-.badge {
-    display: inline-block;
-    padding: 5px 9px;
-    background: #eee;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: bold;
-}
-
 .brand {
     color: #777;
     font-size: 13px;
-    margin-top: 9px;
+    text-transform: uppercase;
 }
 
 .product h3 {
@@ -229,8 +177,8 @@ nav a {
     width: 100%;
     background: #111;
     color: white;
+    padding: 12px;
     border: none;
-    padding: 13px;
     border-radius: 7px;
     cursor: pointer;
     font-weight: bold;
@@ -242,163 +190,103 @@ nav a {
 
 /* CART */
 
-.cart-box {
+.cart {
+    position: fixed;
+    right: -420px;
+    top: 0;
+    width: 400px;
+    max-width: 95%;
+    height: 100%;
     background: white;
-    border-radius: 12px;
+    z-index: 2000;
     padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+    box-shadow: -5px 0 20px rgba(0,0,0,.2);
+    transition: .3s;
+    overflow-y: auto;
+}
+
+.cart.open {
+    right: 0;
+}
+
+.close-cart {
+    float: right;
+    background: #111;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
 }
 
 .cart-item {
-    display: grid;
-    grid-template-columns: 80px 1fr auto auto auto;
-    gap: 15px;
-    align-items: center;
+    display: flex;
+    gap: 10px;
     border-bottom: 1px solid #ddd;
     padding: 15px 0;
 }
 
 .cart-item img {
-    width: 80px;
-    height: 60px;
+    width: 70px;
+    height: 55px;
     object-fit: cover;
-    border-radius: 7px;
+    border-radius: 6px;
 }
 
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.quantity button {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ccc;
-    background: white;
-    border-radius: 5px;
-    cursor: pointer;
+.cart-item-info {
+    flex: 1;
 }
 
 .remove {
-    background: #e53935;
-    color: white;
-    border: none;
-    padding: 8px 10px;
-    border-radius: 5px;
+    color: red;
     cursor: pointer;
+    border: none;
+    background: none;
 }
 
 .cart-total {
-    text-align: right;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
-    margin-top: 25px;
+    margin: 25px 0;
 }
 
 .checkout-button {
+    width: 100%;
     background: #111;
     color: white;
-    padding: 14px 22px;
+    padding: 15px;
     border: none;
-    border-radius: 7px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 15px;
 }
 
 /* CHECKOUT */
 
 .checkout {
+    display: none;
     background: white;
     padding: 30px;
     border-radius: 12px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
-.row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-input,
-textarea,
-select {
+.checkout input,
+.checkout textarea,
+.checkout select {
     width: 100%;
     padding: 13px;
-    margin-top: 7px;
+    margin: 8px 0 15px;
     border: 1px solid #ccc;
     border-radius: 7px;
-    font-size: 15px;
 }
 
-textarea {
-    height: 100px;
-}
-
-.payment {
-    background: #fafafa;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-top: 25px;
-    border-radius: 8px;
-}
-
-.payment-details {
-    background: #eee;
-    padding: 18px;
-    margin-top: 15px;
-    border-radius: 7px;
-    line-height: 1.8;
-}
-
-.warning {
-    color: #666;
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.submit-order {
+.checkout button {
     background: #111;
     color: white;
+    padding: 14px 20px;
     border: none;
-    padding: 15px 25px;
     border-radius: 7px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
 }
-
-.success {
-    display: none;
-    background: #eaf8ed;
-    border: 1px solid #9bd0a4;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
-/* CONTACT */
-
-.contact-box {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-}
-
-.contact-box a {
-    color: #111;
-    font-weight: bold;
-}
-
-/* FOOTER */
 
 footer {
     background: #111;
@@ -408,64 +296,30 @@ footer {
     margin-top: 50px;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:1050px) {
-
+@media(max-width:1000px) {
     .products {
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-
 }
 
-@media(max-width:750px) {
+@media(max-width:700px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .products {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .categories {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .row {
-        grid-template-columns: 1fr;
-    }
-
-    .cart-item {
-        grid-template-columns: 60px 1fr;
-    }
-
-}
-
-@media(max-width:500px) {
-
-    .products {
-        grid-template-columns: 1fr;
-    }
-
-    .categories {
-        grid-template-columns: 1fr;
-    }
-
-    .shop-tools {
         flex-direction: column;
     }
 
     .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
+}
 
+@media(max-width:480px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
@@ -481,18 +335,11 @@ SLIGHTTECH
 </div>
 
 <nav>
-
 <a href="#shop">Shop</a>
-
-<a href="#cart">Cart</a>
-
-<a href="#checkout">Checkout</a>
-
 <a href="#contact">Contact</a>
 
-<button class="cart-button" onclick="goToCart()">
-🛒 Cart
-<span class="cart-count" id="cartCount">0</span>
+<button class="cart-button" onclick="openCart()">
+🛒 Cart (<span id="cartCount">0</span>)
 </button>
 
 </nav>
@@ -504,464 +351,159 @@ SLIGHTTECH
 
 <section class="hero">
 
-<h1>Slighttech Laptop and Computer Solutions</h1>
+<h1>Slighttech Laptop & Computer Solutions</h1>
 
 <p>New & Refurbished Laptops</p>
 
 <p>Quality computers at competitive prices.</p>
 
-<a href="#shop" class="hero-button">
-Shop Laptops
-</a>
-
 </section>
 
 
-<!-- SHOP -->
-
 <div class="container" id="shop">
 
-<h2 class="section-title">
-Shop Laptops
-</h2>
+<h2>Available Laptops</h2>
 
-
-<!-- CATEGORIES -->
-
-<div class="categories">
-
-<div
-class="category active"
-onclick="selectBrand('all',this)">
-All Laptops
-</div>
-
-<div
-class="category"
-onclick="selectBrand('HP',this)">
-HP
-</div>
-
-<div
-class="category"
-onclick="selectBrand('Dell',this)">
-Dell
-</div>
-
-<div
-class="category"
-onclick="selectBrand('Lenovo',this)">
-Lenovo
-</div>
-
-<div
-class="category"
-onclick="selectBrand('MacBook',this)">
-MacBook
-</div>
-
-</div>
-
-
-<!-- SEARCH -->
-
-<div class="shop-tools">
+<div class="search-area">
 
 <input
 type="text"
 id="search"
-placeholder="Search by laptop name..."
-oninput="filterProducts()">
+placeholder="Search HP, Dell, Lenovo, MacBook..."
+oninput="displayProducts()"
+>
 
-<select
-id="sort"
-onchange="filterProducts()">
+<div class="categories">
 
-<option value="default">
-Sort by
-</option>
+<button class="active" onclick="filterCategory('All',this)">
+All
+</button>
 
-<option value="low">
-Price: Low to High
-</option>
+<button onclick="filterCategory('HP',this)">
+HP
+</button>
 
-<option value="high">
-Price: High to Low
-</option>
+<button onclick="filterCategory('Dell',this)">
+Dell
+</button>
 
-</select>
+<button onclick="filterCategory('Lenovo',this)">
+Lenovo
+</button>
+
+<button onclick="filterCategory('MacBook',this)">
+MacBook
+</button>
+
+</div>
 
 </div>
 
 
-<div
-class="products"
-id="products">
-</div>
+<div class="products" id="products"></div>
 
 </div>
 
 
 <!-- CART -->
 
-<div class="container" id="cart">
+<div class="cart" id="cart">
 
-<div class="cart-box">
+<button class="close-cart" onclick="closeCart()">X</button>
 
-<h2>
-🛒 Your Shopping Cart
-</h2>
+<h2>Your Shopping Cart</h2>
 
-<div id="cartItems">
-Your cart is empty.
-</div>
+<div id="cartItems"></div>
 
 <div class="cart-total">
-
 Total: $<span id="cartTotal">0</span>
-
 </div>
 
-<button
-class="checkout-button"
-onclick="goToCheckout()">
-
+<button class="checkout-button" onclick="showCheckout()">
 Proceed to Checkout
-
 </button>
-
-</div>
 
 </div>
 
 
 <!-- CHECKOUT -->
 
-<div class="container" id="checkout">
+<div class="container">
 
-<div class="checkout">
+<div class="checkout" id="checkout">
 
-<h2>
-Checkout
-</h2>
+<h2>Checkout</h2>
 
-<h3>
-Your Order
-</h3>
+<h3>Order Summary</h3>
 
-<div id="checkoutItems">
-Your cart is empty.
-</div>
+<div id="checkoutSummary"></div>
 
+<hr>
 
-<form id="orderForm">
-
-<h3>
-Customer Details
-</h3>
-
-<div class="row">
-
-<div>
-
-<label>
-Full Name
-</label>
+<label>Full Name</label>
 
 <input
 type="text"
+placeholder="Your full name"
 required
-placeholder="Full name">
+>
 
-</div>
-
-
-<div>
-
-<label>
-Email
-</label>
+<label>Email</label>
 
 <input
 type="email"
+value="marybroom662@gmail.com"
 required
-placeholder="you@example.com">
+>
 
-</div>
-
-</div>
-
-
-<div class="row">
-
-<div>
-
-<label>
-Phone Number
-</label>
+<label>Phone Number</label>
 
 <input
 type="tel"
+placeholder="+1..."
 required
-placeholder="+1...">
+>
 
-</div>
-
-
-<div>
-
-<label>
-Country
-</label>
+<label>Country</label>
 
 <input
 type="text"
+placeholder="United States"
 required
-placeholder="United States">
+>
 
-</div>
-
-</div>
-
-
-<div class="row">
-
-<div>
-
-<label>
-City
-</label>
-
-<input
-type="text"
-required>
-
-</div>
-
-
-<div>
-
-<label>
-State / County
-</label>
-
-<input
-type="text"
-required>
-
-</div>
-
-</div>
-
-
-<div class="row">
-
-<div>
-
-<label>
-ZIP / Postal Code
-</label>
-
-<input
-type="text"
-required>
-
-</div>
-
-
-<div>
-
-<label>
-Street / Physical Address
-</label>
+<label>City</label>
 
 <input
 type="text"
 required
-placeholder="House number and street">
+>
 
-</div>
+<label>Street Address</label>
 
-</div>
+<input
+type="text"
+required
+>
 
+<label>Payment Method</label>
 
-<label>
-Additional Delivery Information
-</label>
+<select>
 
-<textarea
-placeholder="Apartment, building, delivery instructions, etc.">
-</textarea>
-
-
-<!-- PAYMENT -->
-
-<div class="payment">
-
-<h3>
-Payment
-</h3>
-
-<label>
-Payment Method
-</label>
-
-<select
-id="paymentMethod"
-onchange="paymentChanged()">
-
-<option value="bank">
-Bank Transfer
-</option>
-
-<option value="crypto">
-Crypto
-</option>
-
+<option>Bank Transfer</option>
+<option>Crypto</option>
 </select>
 
-
-<div
-id="bank"
-class="payment-details">
-
-<strong>
-EQUITY BANK
-</strong>
-
-<br><br>
-
-Account Name:
-<br>
-
-<strong>
-COLLINCE WAWERU KARIUKI
-</strong>
-
-<br><br>
-
-Account Number:
-<br>
-
-<strong>
-0420183035525
-</strong>
-
-<br><br>
-
-SWIFT / BIC:
-<br>
-
-<strong>
-EQBLKENAXXX
-</strong>
-
-</div>
-
-
-<div
-id="crypto"
-class="payment-details"
-style="display:none;">
-
-<strong>
-Crypto Payment
-</strong>
-
-<br><br>
-
-Network:
-<br>
-
-<strong>
-YOUR CRYPTO NETWORK
-</strong>
-
-<br><br>
-
-Wallet Address:
-<br>
-
-<strong>
-YOUR CRYPTO WALLET ADDRESS
-</strong>
-
-</div>
-
-
-<p class="warning">
-
-After making your payment, enter your payment
-reference or transaction ID below.
-
-Your order should remain pending until payment
-has been verified.
-
-</p>
-
-</div>
-
-
-<label>
-Payment Reference / Transaction ID
-</label>
+<label>Payment Reference</label>
 
 <input
 type="text"
-required
-placeholder="Enter payment reference">
+placeholder="Transaction ID"
+>
 
-
-<label>
-Payment Screenshot / Receipt
-</label>
-
-<input
-type="file"
-accept="image/*,.pdf"
-required>
-
-
-<button
-class="submit-order"
-type="submit">
-
-SUBMIT ORDER
-
+<button onclick="placeOrder()">
+PLACE ORDER
 </button>
-
-</form>
-
-
-<div
-class="success"
-id="success">
-
-<h3>
-Order Submitted ✓
-</h3>
-
-<p>
-Your order number is:
-</p>
-
-<strong id="orderNumber">
-</strong>
-
-<p>
-Payment status:
-<strong>
-Pending Verification
-</strong>
-</p>
-
-<p>
-Please keep your payment receipt.
-Slighttech will verify the payment before
-the laptop is dispatched.
-</p>
-
-</div>
 
 </div>
 
@@ -972,16 +514,10 @@ the laptop is dispatched.
 
 <div class="container" id="contact">
 
-<div class="contact-box">
-
-<h2>
-Contact Slighttech
-</h2>
+<h2>Contact Slighttech</h2>
 
 <p>
-<strong>
-Slighttech Laptop and Computer Solutions
-</strong>
+<strong>Slighttech Laptop and Computer Solutions</strong>
 </p>
 
 <p>
@@ -990,13 +526,6 @@ Email:
 marybroom662@gmail.com
 </a>
 </p>
-
-<p>
-WhatsApp:
-YOUR WHATSAPP NUMBER
-</p>
-
-</div>
 
 </div>
 
@@ -1008,356 +537,627 @@ YOUR WHATSAPP NUMBER
 </p>
 
 <p>
-New & Refurbished Computers</p>
+New & Refurbished Computers
+</p>
 
 </footer>
 
 
 <script>
 
-/* =====================================================
-   PRODUCT DATABASE
-   40 LAPTOPS
-===================================================== */
-
 const laptops = [
 
-/* ================= HP ================= */
+/* HP */
 
 {
-id:1,
 brand:"HP",
 name:"HP EliteBook 840 G3",
 price:150,
-condition:"Refurbished",
 specs:"Core i5 • 8GB RAM • 256GB SSD",
 image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
 },
 
 {
-id:2,
-brand:"HP",
-name:"HP ProBook 450 G4",
-price:175,
-condition:"Refurbished",
-specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
-},
-
-{
-id:3,
-brand:"HP",
-name:"HP EliteBook 850 G3",
-price:200,
-condition:"Refurbished",
-specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
-},
-
-{
-id:4,
-brand:"HP",
-name:"HP EliteBook 840 G4",
-price:225,
-condition:"Refurbished",
-specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
-},
-
-{
-id:5,
-brand:"HP",
-name:"HP ProBook 450 G5",
-price:250,
-condition:"Refurbished",
-specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
-},
-
-{
-id:6,
 brand:"HP",
 name:"HP EliteBook 840 G5",
-price:300,
-condition:"Refurbished",
+price:220,
 specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
 },
 
 {
-id:7,
-brand:"HP",
-name:"HP ProBook 450 G6",
-price:350,
-condition:"Refurbished",
-specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
-},
-
-{
-id:8,
 brand:"HP",
 name:"HP EliteBook 840 G6",
-price:400,
-condition:"Refurbished",
-specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+price:280,
+specs:"Core i5 • 16GB RAM • 256GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
 },
 
 {
-id:9,
 brand:"HP",
 name:"HP EliteBook 840 G7",
-price:500,
-condition:"Refurbished",
+price:350,
 specs:"Core i5 • 16GB RAM • 512GB SSD",
 image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
 },
 
 {
-id:10,
 brand:"HP",
-name:"HP Pavilion 15",
-price:650,
-condition:"New",
+name:"HP EliteBook 850 G6",
+price:320,
 specs:"Core i7 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
-},
-
-
-/* ================= DELL ================= */
-
-{
-id:11,
-brand:"Dell",
-name:"Dell Latitude E5470",
-price:150,
-condition:"Refurbished",
-specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
 },
 
 {
-id:12,
-brand:"Dell",
-name:"Dell Latitude E7470",
-price:175,
-condition:"Refurbished",
-specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
-},
-
-{
-id:13,
-brand:"Dell",
-name:"Dell Latitude 5480",
-price:200,
-condition:"Refurbished",
+brand:"HP",
+name:"HP ProBook 440 G7",
+price:300,
 specs:"Core i5 • 8GB RAM • 256GB SSD",
 image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
 },
 
 {
-id:14,
+brand:"HP",
+name:"HP ProBook 450 G8",
+price:390,
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP Pavilion 15",
+price:450,
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP Envy 13",
+price:550,
+specs:"Core i7 • 16GB RAM • 512GB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+{
+brand:"HP",
+name:"HP Spectre x360",
+price:750,
+specs:"Core i7 • 16GB RAM • 1TB SSD",
+image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+},
+
+
+/* DELL */
+
+{
+brand:"Dell",
+name:"Dell Latitude E7470",
+price:170,
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
+},
+
+{
+brand:"Dell",
+name:"Dell Latitude 5480",
+price:220,
+specs:"Core i5 • 8GB RAM • 256GB SSD",
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
+},
+
+{
 brand:"Dell",
 name:"Dell Latitude 5490",
 price:250,
-condition:"Refurbished",
 specs:"Core i5 • 16GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
 },
 
 {
-id:15,
 brand:"Dell",
 name:"Dell Latitude 5400",
-price:300,
-condition:"Refurbished",
+price:290,
 specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
 },
 
 {
-id:16,
 brand:"Dell",
 name:"Dell Latitude 5410",
-price:350,
-condition:"Refurbished",
+price:330,
 specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
 },
 
 {
-id:17,
 brand:"Dell",
 name:"Dell Latitude 5420",
-price:400,
-condition:"Refurbished",
+price:380,
 specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
 },
 
 {
-id:18,
 brand:"Dell",
 name:"Dell Latitude 5520",
-price:500,
-condition:"Refurbished",
-specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+price:420,
+specs:"Core i7 • 16GB RAM • 512GB SSD",
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
 },
 
 {
-id:19,
 brand:"Dell",
 name:"Dell XPS 13",
-price:750,
-condition:"Refurbished",
+price:600,
 specs:"Core i7 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
 },
 
 {
-id:20,
 brand:"Dell",
 name:"Dell XPS 15",
-price:950,
-condition:"Refurbished",
+price:800,
 specs:"Core i7 • 16GB RAM • 1TB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
+},
+
+{
+brand:"Dell",
+name:"Dell Precision 5550",
+price:950,
+specs:"Core i7 • 32GB RAM • 1TB SSD",
+image:"https://i.ebayimg.com/images/g/7XsAAeSwRohpId3T/s-l1200.png"
 },
 
 
-/* ================= LENOVO ================= */
+/* LENOVO */
 
 {
-id:21,
 brand:"Lenovo",
 name:"Lenovo ThinkPad X250",
-price:160,
-condition:"Refurbished",
+price:150,
 specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:22,
 brand:"Lenovo",
-name:"Lenovo ThinkPad T450",
+name:"Lenovo ThinkPad X260",
 price:180,
-condition:"Refurbished",
 specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:23,
 brand:"Lenovo",
-name:"Lenovo ThinkPad T460",
-price:200,
-condition:"Refurbished",
+name:"Lenovo ThinkPad X270",
+price:210,
 specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:24,
 brand:"Lenovo",
-name:"Lenovo ThinkPad T470",
+name:"Lenovo ThinkPad X280",
 price:250,
-condition:"Refurbished",
 specs:"Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:25,
 brand:"Lenovo",
 name:"Lenovo ThinkPad T480",
 price:300,
-condition:"Refurbished",
 specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:26,
 brand:"Lenovo",
 name:"Lenovo ThinkPad T490",
 price:350,
-condition:"Refurbished",
 specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:27,
 brand:"Lenovo",
 name:"Lenovo ThinkPad T14",
 price:450,
-condition:"Refurbished",
 specs:"Core i5 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:28,
-brand:"Lenovo",
-name:"Lenovo ThinkPad X1 Carbon",
-price:550,
-condition:"Refurbished",
-specs:"Core i7 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
-},
-
-{
-id:29,
 brand:"Lenovo",
 name:"Lenovo IdeaPad 5",
-price:650,
-condition:"New",
-specs:"Core i7 • 16GB RAM • 512GB SSD",
-image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+price:500,
+specs:"Core i5 • 16GB RAM • 512GB SSD",
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 {
-id:30,
 brand:"Lenovo",
-name:"Lenovo ThinkPad X1 Extreme",
-price:900,
-condition:"Refurbished",
+name:"Lenovo Yoga 7",
+price:700,
 specs:"Core i7 • 16GB RAM • 1TB SSD",
-image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
+},
+
+{
+brand:"Lenovo",
+name:"Lenovo ThinkPad X1 Carbon",
+price:900,
+specs:"Core i7 • 16GB RAM • 1TB SSD",
+image:"https://inhat.vn/wp-content/uploads/2022/04/laptop-nha-trang-1-min.jpg"
 },
 
 
-/* ================= MACBOOK ================= */
+/* MACBOOK */
 
 {
-id:31,
 brand:"MacBook",
 name:"MacBook Air 2017",
 price:250,
-condition:"Refurbished",
-specs:"Intel Core i5 • 8GB RAM • 128GB SSD",
-image:"https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+specs:"Core i5 • 8GB RAM • 128GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
 },
 
 {
-id:32,
 brand:"MacBook",
 name:"MacBook Air 2019",
 price:350,
-condition:"Refurbished",
-specs:"Intel Core i5 • 8GB RAM • 256GB SSD",
-image:"https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+specs:"Core i5 • 8GB RAM • 128GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
 },
 
 {
-id:33,
 brand:"MacBook",
-name:"MacBook Pro 2017",
-price:400,
-condition:"Refurbished",
-specs:"Intel Core i5 • 8GB RAM • 256GB SSD",
-image:
+name:"MacBook Air 2020",
+price:450,
+specs:"Core i3 • 8GB RAM • 256GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Air M1",
+price:600,
+specs:"Apple M1 • 8GB RAM • 256GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Air M1 16GB",
+price:700,
+specs:"Apple M1 • 16GB RAM • 512GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Air M2",
+price:750,
+specs:"Apple M2 • 8GB RAM • 256GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Air M2 16GB",
+price:850,
+specs:"Apple M2 • 16GB RAM • 512GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Pro 13 M1",
+price:800,
+specs:"Apple M1 • 16GB RAM • 512GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Pro 14",
+price:950,
+specs:"Apple M2 Pro • 16GB RAM • 512GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+},
+
+{
+brand:"MacBook",
+name:"MacBook Pro 16",
+price:1000,
+specs:"Apple M2 Pro • 16GB RAM • 512GB SSD",
+image:"https://mrlaptop.com.tw/cdn/shop/collections/image-963371.webp?v=1750216468"
+}
+
+];
+
+
+let cart = [];
+let currentCategory = "All";
+
+
+function displayProducts() {
+
+const search =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+const container =
+document.getElementById("products");
+
+container.innerHTML = "";
+
+const filtered =
+laptops.filter(product => {
+
+const matchesCategory =
+currentCategory === "All" ||
+product.brand === currentCategory;
+
+const matchesSearch =
+product.name
+.toLowerCase()
+.includes(search) ||
+product.brand
+.toLowerCase()
+.includes(search);
+
+return matchesCategory && matchesSearch;
+
+});
+
+
+filtered.forEach((product,index) => {
+
+const originalIndex =
+laptops.indexOf(product);
+
+container.innerHTML += `
+
+<div class="product">
+
+<img
+src="${product.image}"
+alt="${product.name}"
+onerror="this.src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80'"
+>
+
+<div class="product-content">
+
+<div class="brand">
+${product.brand}
+</div>
+
+<h3>
+${product.name}
+</h3>
+
+<div class="specs">
+${product.specs}
+</div>
+
+<div class="price">
+$${product.price}
+</div>
+
+<button
+class="add-cart"
+onclick="addToCart(${originalIndex})"
+>
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+function filterCategory(category,button) {
+
+currentCategory = category;
+
+document
+.querySelectorAll(".categories button")
+.forEach(btn =>
+btn.classList.remove("active")
+);
+
+button.classList.add("active");
+
+displayProducts();
+
+}
+
+
+function addToCart(index) {
+
+cart.push(laptops[index]);
+
+updateCart();
+
+openCart();
+
+}
+
+
+function updateCart() {
+
+const items =
+document.getElementById("cartItems");
+
+items.innerHTML = "";
+
+let total = 0;
+
+cart.forEach((item,index) => {
+
+total += item.price;
+
+items.innerHTML += `
+
+<div class="cart-item">
+
+<img src="${item.image}">
+
+<div class="cart-item-info">
+
+<strong>
+${item.name}
+</strong>
+
+<br>
+
+$${item.price}
+
+<br>
+
+<button
+class="remove"
+onclick="removeFromCart(${index})"
+>
+Remove
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+document.getElementById("cartTotal")
+.textContent = total;
+
+document.getElementById("cartCount")
+.textContent = cart.length;
+
+}
+
+
+function removeFromCart(index) {
+
+cart.splice(index,1);
+
+updateCart();
+
+}
+
+
+function openCart() {
+
+document
+.getElementById("cart")
+.classList.add("open");
+
+}
+
+
+function closeCart() {
+
+document
+.getElementById("cart")
+.classList.remove("open");
+
+}
+
+
+function showCheckout() {
+
+if(cart.length === 0) {
+
+alert("Your cart is empty.");
+
+return;
+
+}
+
+closeCart();
+
+const checkout =
+document.getElementById("checkout");
+
+checkout.style.display = "block";
+
+let total = 0;
+
+let summary = "";
+
+cart.forEach(item => {
+
+total += item.price;
+
+summary += `
+<p>
+<strong>${item.name}</strong>
+— $${item.price}
+</p>
+`;
+
+});
+
+summary += `
+<hr>
+<h3>Total: $${total}</h3>
+`;
+
+document.getElementById(
+"checkoutSummary"
+).innerHTML = summary;
+
+checkout.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function placeOrder() {
+
+if(cart.length === 0) {
+
+alert("Your cart is empty.");
+
+return;
+
+}
+
+const orderNumber =
+"ST-" +
+Math.floor(
+10000000 +
+Math.random() * 90000000
+);
+
+alert(
+"Order received!\n\nOrder number: " +
+orderNumber +
+"\n\nSlighttech will contact you to confirm the order."
+);
+
+}
+
+
+displayProducts();
+
+</script>
+
+</body>
+</html>
