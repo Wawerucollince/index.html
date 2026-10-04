@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Slighttech Laptop and Computer Solutions</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #111111;
+}
+
+header {
+    background: #111111;
+    color: white;
+    padding: 20px;
+}
+
+.header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    background: #f5f5f5;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 35px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+
+.product img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 20px;
+}
+
+.badge {
+    background: #eeeeee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.product h3 {
+    margin-bottom: 10px;
+}
+
+.product p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #333;
+}
+
+.checkout {
+    background: #f7f7f7;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.selected {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 13px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.payment {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.payment-details {
+    background: #f1f1f1;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 7px;
+    line-height: 1.8;
+    word-break: break-word;
+}
+
+.warning {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.success {
+    display: none;
+    background: #eaf8ed;
+    border: 1px solid #9bd0a4;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+@media(max-width:750px) {
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="header">
+
+<div class="logo">
+SLIGHTTECH
+</div>
+
+<nav>
+<a href="#shop">Shop</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>
+Slighttech Laptop and Computer Solutions
+</h1>
+
+<p>
+New & Refurbished Laptops
+</p>
+
+<p>
+Quality computers at competitive prices.
+</p>
+
+</section>
+
+
+
+<div class="container" id="shop">
+
+<h2>
+Available Laptops
+</h2>
+
+
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+alt="HP EliteBook">
+
+<div class="product-content">
+
+<span class="badge">
+REFURBISHED
+</span>
+
+<h3>
+HP EliteBook 840
+</h3>
+
+<p>
+Intel Core i5<br>
+8GB RAM<br>
+256GB SSD
+</p>
+
+<div class="price">
+$299
+</div>
+
+<button onclick="buyLaptop(
+'HP EliteBook 840',
+'Refurbished',
+'$299'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+alt="Dell Latitude">
+
+<div class="product-content">
+
+<span class="badge">
+REFURBISHED
+</span>
+
+<h3>
+Dell Latitude 5420
+</h3>
+
+<p>
+Intel Core i5<br>
+16GB RAM<br>
+512GB SSD
+</p>
+
+<div class="price">
+$349
+</div>
+
+<button onclick="buyLaptop(
+'Dell Latitude 5420',
+'Refurbished',
+'$349'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+alt="Lenovo ThinkPad">
+
+<div class="product-content">
+
+<span class="badge">
+NEW
+</span>
+
+<h3>
+Lenovo ThinkPad E14
+</h3>
+
+<p>
+Intel Core i7<br>
+16GB RAM<br>
+512GB SSD
+</p>
+
+<div class="price">
+$599
+</div>
+
+<button onclick="buyLaptop(
+'Lenovo ThinkPad E14',
+'New',
+'$599'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=900&q=80"
+alt="HP Laptop">
+
+<div class="product-content">
+
+<span class="badge">
+NEW
+</span>
+
+<h3>
+HP 250 G9
+</h3>
+
+<p>
+Intel Core i5<br>
+8GB RAM<br>
+512GB SSD
+</p>
+
+<div class="price">
+$499
+</div>
+
+<button onclick="buyLaptop(
+'HP 250 G9',
+'New',
+'$499'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ORDER -->
+
+<div class="container" id="order">
+
+<div class="checkout">
+
+<h2>
+Place Your Order
+</h2>
+
+
+<div class="selected">
+
+<strong>
+Selected Laptop:
+</strong>
+
+<p id="selectedLaptop">
+Please select a laptop above.
+</p>
+
+</div>
+
+
+
+<form id="orderForm">
+
+
+<h3>
+Your Details
+</h3>
+
+
+<div class="row">
+
+<div>
+
+<label>
+Full Name
+</label>
+
+<input
+type="text"
+required
+placeholder="Full name">
+
+</div>
+
+
+<div>
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+required
+placeholder="you@example.com">
+
+</div>
+
+</div>
+
+
+
+<div class="row">
+
+<div>
+
+<label>
+Phone Number
+</label>
+
+<input
+type="tel"
+required
+placeholder="+1...">
+
+</div>
+
+
+<div>
+
+<label>
+Country
+</label>
+
+<input
+type="text"
+required
+placeholder="United States">
+
+</div>
+
+</div>
+
+
+
+<div class="row">
+
+<div>
+
+<label>
+City
+</label>
+
+<input
+type="text"
+required>
+
+</div>
+
+
+<div>
+
+<label>
+State / County
+</label>
+
+<input
+type="text"
+required>
+
+</div>
+
+</div>
+
+
+
+<div class="row">
+
+<div>
+
+<label>
+ZIP / Postal Code
+</label>
+
+<input
+type="text"
+required>
+
+</div>
+
+
+<div>
+
+<label>
+Street / Physical Address
+</label>
+
+<input
+type="text"
+required
+placeholder="House number and street">
+
+</div>
+
+</div>
+
+
+
+<label>
+Additional Delivery Information
+</label>
+
+<textarea
+placeholder="Apartment, building, delivery instructions, etc.">
+</textarea>
+
+
+
+<!-- PAYMENT -->
+
+<div class="payment">
+
+<h3>
+Payment
+</h3>
+
+
+<label>
+Payment Method
+</label>
+
+<select
+id="paymentMethod"
+onchange="paymentChanged()">
+
+<option value="bank">
+Bank Transfer
+</option>
+
+<option value="crypto">
+Crypto
+</option>
+
+</select>
+
+
+
+<!-- BANK -->
+
+<div
+id="bank"
+class="payment-details">
+
+<strong>
+EQUITY BANK
+</strong>
+
+<br><br>
+
+Account Name:
+<br>
+
+<strong>
+COLLINCE WAWERU KARIUKI
+</strong>
+
+<br><br>
+
+Account Number:
+<br>
+
+<strong>
+0420183035525
+</strong>
+
+<br><br>
+
+SWIFT / BIC:
+<br>
+
+<strong>
+EQBLKENAXXX
+</strong>
+
+</div>
+
+
+
+<!-- CRYPTO -->
+
+<div
+id="crypto"
+class="payment-details"
+style="display:none;">
+
+<strong>
+Crypto Payment
+</strong>
+
+<br><br>
+
+Network:
+<br>
+
+<strong>
+YOUR CRYPTO NETWORK
+</strong>
+
+<br><br>
+
+Wallet Address:
+<br>
+
+<strong>
+YOUR CRYPTO WALLET ADDRESS
+</strong>
+
+</div>
+
+
+
+<p class="warning">
+
+After making your payment, enter your payment
+reference or transaction ID below.
+
+Then upload your payment receipt.
+
+Your order should remain pending until the
+payment is verified.
+
+</p>
+
+
+</div>
+
+
+
+<label>
+Payment Reference / Transaction ID
+</label>
+
+<input
+type="text"
+required
+placeholder="Enter payment reference">
+
+
+
+<label>
+Payment Screenshot / Receipt
+</label>
+
+<input
+type="file"
+accept="image/*,.pdf"
+required>
+
+
+
+<br><br>
+
+
+<button type="submit">
+SUBMIT ORDER
+</button>
+
+
+</form>
+
+
+
+<div
+class="success"
+id="success">
+
+<h3>
+Order Submitted ✓
+</h3>
+
+<p>
+Your order number is:
+</p>
+
+<strong id="orderNumber">
+</strong>
+
+<p>
+Payment status:
+<strong>
+Pending Verification
+</strong>
+</p>
+
+<p>
+Please keep your payment receipt.
+Slighttech will verify the payment before
+the laptop is dispatched.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- CONTACT -->
+
+<div class="container" id="contact">
+
+<h2>
+Contact Us
+</h2>
+
+<p>
+<strong>
+Slighttech Laptop and Computer Solutions
+</strong>
+</p>
+
+<p>
+Email: YOUR EMAIL HERE
+</p>
+
+<p>
+WhatsApp: YOUR WHATSAPP NUMBER
+</p>
+
+</div>
+
+
+
+<footer>
+
+<p>
+© 2026 Slighttech Laptop and Computer Solutions
+</p>
+
+<p>
+New & Refurbished Computers
+</p>
+
+</footer>
+
+
+
+<script>
+
+
+let selectedLaptop = "";
+
+
+/* SELECT LAPTOP */
+
+function buyLaptop(name, condition, price) {
+
+selectedLaptop =
+name +
+" — " +
+condition +
+" — " +
+price;
+
+document.getElementById(
+"selectedLaptop"
+).innerHTML = selectedLaptop;
+
+document.getElementById(
+"order"
+).scrollIntoView({
+behavior: "smooth"
+});
+
+}
+
+
+/* PAYMENT */
+
+function paymentChanged() {
+
+let method =
+document.getElementById(
+"paymentMethod"
+).value;
+
+if(method === "bank") {
+
+document.getElementById(
+"bank"
+).style.display = "block";
+
+document.getElementById(
+"crypto"
+).style.display = "none";
+
+}
+
+else {
+
+document.getElementById(
+"bank"
+).style.display = "none";
+
+document.getElementById(
+"crypto"
+).style.display = "block";
+
+}
+
+}
+
+
+/* ORDER */
+
+document.getElementById(
+"orderForm"
+).addEventListener(
+"submit",
+function(event) {
+
+event.preventDefault();
+
+
+if(selectedLaptop === "") {
+
+alert(
+"Please select a laptop first."
+);
+
+return;
+
+}
+
+
+let orderNumber =
+"ST-" +
+Math.floor(
+10000000 +
+Math.random() * 90000000
+);
+
+
+document.getElementById(
+"orderNumber"
+).textContent =
+orderNumber;
+
+
+document.getElementById(
+"success"
+).style.display =
+"block";
+
+
+alert(
+"Order submitted. Order number: " +
+orderNumber
+);
+
+}
+
+);
+
+</script>
+
+
+</body>
+  </html>
